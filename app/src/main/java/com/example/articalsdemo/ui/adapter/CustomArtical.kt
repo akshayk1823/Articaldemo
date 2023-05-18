@@ -10,14 +10,20 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.fontResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -40,12 +46,14 @@ fun CustomArtical(artical: Artical){
 
 
         )
-        Text(artical.title,
-            Modifier
-                .background(Color.White)
-                .fillMaxWidth()
-                .padding(vertical = 20.dp),
-                textAlign = TextAlign.Start)
+
+        Text(text = artical.title,
+            modifier = Modifier.fillMaxWidth()
+                .background(color = Color.White)
+                .padding(20.dp)
+                .wrapContentHeight(align = Alignment.CenterVertically),
+                color = Color.Black,fontSize = 20.sp, fontStyle = FontStyle.Normal,textAlign = TextAlign.Start)
+
     }
 
 }
